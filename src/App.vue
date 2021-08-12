@@ -12,7 +12,6 @@ import Board from './components/Board.vue'
 export default {
     name: 'App',
     components: {
-        HelloWorld
         // コンポーネントに登録する
         Board
     }
