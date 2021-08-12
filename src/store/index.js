@@ -31,11 +31,17 @@ const store = new Vuex.Store({
         addlist(state, payload) {
             state.lists.push({ title: payload.title, cards:[] }) // stateを更新
         },
+        removelist(state, payload) {
+            state.lists.splice(payload.listIndex, 1)
+        },
     },
     actions: {
-        addlist(context, payload) {
+        addlist(context, payload) { // context：ストアインスタンスのメソッドやプロパティを呼び出せるオブジェクト
             context.commit('addlist', payload) // mutationsをコミット（実行）
         },
+        removelist(context, payload) {
+            context.commit('removelist', payload)
+        }
     },
     getters: {
     },
