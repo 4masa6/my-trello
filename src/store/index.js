@@ -11,25 +11,25 @@ const store = new Vuex.Store({
             {
                 title: 'Backlog',
                 cards: [
-                    {body: 'English'},
-                    {body: 'Mathematics'},
+                    { body: 'English' },
+                    { body: 'Mathematics' },
                 ]
             },
             {
                 title: 'ToDo',
                 cards: [
-                    {body: 'Science'}
+                    { body: 'Science' }
                 ]
             },
             {
                 title: 'Doing',
                 cards: []
             }
-        ]
+        ],
     },
     mutations: {
         addlist(state, payload) {
-            state.lists.push({ title:payload.title, cards:[] }) // stateを更新
+            state.lists.push({ title: payload.title, cards:[] }) // stateを更新
         },
     },
     actions: {
@@ -38,7 +38,7 @@ const store = new Vuex.Store({
         },
     },
     getters: {
-    }
+    },
 })
 
 store.subscribe((mutation, state) => {

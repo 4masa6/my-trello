@@ -20,7 +20,7 @@
 <script>
 export default {
     data: function() {
-        return{
+        return {
             title: '',
             isEditing: false,
         }
@@ -28,6 +28,7 @@ export default {
     computed: {
         classList() {
             const classList = ['addlist']
+
             if (this.isEditing) {
                 classList.push('active')
             }
@@ -38,11 +39,11 @@ export default {
         },
         titleExists() {
             return this.title.length > 0
-        }
+        },
     },
     methods: {
         addList() {
-            this.$store.dispatch('addlist', this.title)
+            this.$store.dispatch('addlist', { title: this.title })
             this.title = ''
         },
         startEditing() {
@@ -51,6 +52,6 @@ export default {
         finishEditing() {
             this.isEditing = false
         },
-    },
+    }
 }
 </script>
